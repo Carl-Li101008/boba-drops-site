@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jiaxi Li — Student Developer</title>
+  <meta name="description" content="Jiaxi Li is a student at GCGS who builds small web projects and learning logs from Hack Club workshops." />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jiaxi Li — Student Developer" />
+  <meta property="og:description" content="Personal site built during a Hack Club Boba Drops workshop." />
+  <meta property="og:image" content="screenshot.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Restore the saved theme before first paint, so there is no flash -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch (e) { /* storage blocked: keep default */ }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <div class="glow glow-a" aria-hidden="true"></div>
+  <div class="glow glow-b" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top">J<span>.</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#log">Learning log</a>
+      <a href="#site">This site</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="theme" class="theme-btn" type="button" aria-pressed="false" aria-label="Switch to light theme">
+      <span class="dot" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero reveal" id="top">
+      <p class="kicker">Hack Club · GCGS</p>
+      <h1>Hi, I'm <span class="grad">Jiaxi</span>.</h1>
+      <p class="lede">
+        Student developer learning by building.
+        <br />
+        <span id="typed" class="typed" aria-hidden="true"></span><span class="caret" aria-hidden="true">_</span>
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#log">What I'm learning</a>
+        <a class="btn ghost" href="#contact">Contact me</a>
+      </div>
+    </section>
+
+    <section class="card reveal" id="about">
+      <h2>About</h2>
+      <p>
+        I'm a high school student at GCGS and a member of GCGS Hack Club. I learn by
+        making small things that actually run: web pages, little games, and CAD models
+        I can print in the club room.
+      </p>
+      <ul class="chips" aria-label="Tools I use">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Git</li>
+        <li>TinkerCAD</li>
+      </ul>
+    </section>
+
+    <section class="reveal" id="log">
+      <h2>Learning log</h2>
+      <ol class="timeline">
+        <li>
+          <time datetime="2026-10">Oct 2026</time>
+          <div>
+            <h3>Joined GCGS Hack Club</h3>
+            <p>Signed up through the Clubs platform and started exploring workshops.</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-10">Oct 2026</time>
+          <div>
+            <h3>Boba Drops: built this site</h3>
+            <p>
+              Completed the HTML + CSS workshop by shipping this personal site.
+              Everything here is hand-written, no frameworks.
+            </p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-10">Next up</time>
+          <div>
+            <h3>Smaller builds</h3>
+            <p>Shipping a browser game and a CAD keyring next, so this page keeps growing.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card reveal" id="site">
+      <h2>This site</h2>
+      <p>Built from scratch for the Boba Drops workshop. What's actually implemented:</p>
+      <ul class="features">
+        <li>Dark / light theme with the choice saved in <code>localStorage</code></li>
+        <li>Reading-progress bar that follows the scroll position</li>
+        <li>Scroll-reveal sections via <code>IntersectionObserver</code></li>
+        <li>One-click copy of my email address, with inline feedback</li>
+        <li>Visit counter that stays on this device</li>
+        <li>Responsive from 320px up, with a <code>prefers-reduced-motion</code> fallback</li>
+      </ul>
+    </section>
+
+    <section class="card reveal" id="contact">
+      <h2>Contact</h2>
+      <p>Want to build something together? Email is the fastest way.</p>
+      <div class="contact-row">
+        <a class="mail" href="mailto:carl20101008@gmail.com">carl20101008@gmail.com</a>
+        <button id="copy" class="copy-btn" type="button">Copy email</button>
+      </div>
+      <p id="copy-status" class="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>
+      © <span id="year">2026</span> Jiaxi Li · built during a Hack Club workshop
+      <span class="sep" aria-hidden="true">·</span>
+      <span id="visits">first visit on this device</span>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
